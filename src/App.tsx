@@ -1,7 +1,9 @@
-import { Redirect, Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import { IonApp, IonRouterOutlet } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 import ChannelMessagesPage from "./pages/ChannelMessagesPage";
+import ChannelsPage from "./pages/ChannelsPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -26,12 +28,14 @@ const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
-        <Route exact path="/channels/:channelId/messages">
-          <ChannelMessagesPage />
-        </Route>
-        <Route exact path="/">
-          <Redirect to="/channels/abcde/messages" />
-        </Route>
+        <Route
+          exact
+          path="/channels/:channelId/messages"
+          component={ChannelMessagesPage}
+        />
+        <Route exact path="/channels" component={ChannelsPage} />
+        <Redirect exact from="/" to="/channels" />
+        <Route component={NotFoundPage} />
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
