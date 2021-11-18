@@ -16,7 +16,7 @@ describe("Task 1: Restore data access!! 🚨", () => {
   });
 
   describe("clicking on a channel", () => {
-    it("navigates shows the messages for the channel", () => {
+    it("shows the messages for the channel", () => {
       cy.get(`[data-cy="channel-${task1ChannelId}"]`).click();
       task1ChannelMessages.forEach(({ text }) => {
         cy.get(`[data-cy="message"]`).contains(text);
