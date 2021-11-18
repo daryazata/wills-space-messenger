@@ -36,7 +36,7 @@ describe("Task 2: Real, **_raw_**, real-time updates ✨", () => {
     });
 
     it("appears in the list of messages", () => {
-      cy.get("[data-cy=message]").contains(now);
+      cy.contains("[data-cy=message]", now).should("exist");
     });
   });
 });
