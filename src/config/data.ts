@@ -1,6 +1,6 @@
 // Characters, quotes and avatars from https://final-space.fandom.com/
 export const users: Record<
-  string,
+  "gary" | "quinn" | "kvn" | "mooncake" | "avocato" | "hue",
   { name: string; avatar: string; quotes: readonly string[] }
 > = {
   gary: {
@@ -155,7 +155,7 @@ export const users: Record<
       "Hi Future Quinn, I'm KVN, I'm Gary's Deep Space Insanity Avoidance Companion!",
       "I'm burning you alive tonight. Yes, I'm burning you alive tonight. While you sleep? You bet! I'm burning you alive tonight!",
       "I'm backkkk!",
-      "It bounces forever...got it from a dead guy.",
+      "It bounces forever... got it from a dead guy.",
       "Greetings, insane worshippers!",
       "Is anything real, or is this a beautiful lie?",
       "Hooray! KVN will never die.",
@@ -294,3 +294,13 @@ export const ship = {
     },
   },
 } as const;
+
+export const seedChannelIds = [...Object.keys(ship.rooms), "captainsLog"];
+
+export const task1ChannelId = "task1";
+export const task1ChannelMessages = [
+  { senderId: "kvn", sender: users.kvn, text: users.kvn.quotes[0] },
+  { senderId: "gary", sender: users.gary, text: users.gary.quotes[4] },
+  { senderId: "kvn", sender: users.kvn, text: users.kvn.quotes[9] },
+  { senderId: "gary", sender: users.gary, text: users.gary.quotes[7] },
+];
