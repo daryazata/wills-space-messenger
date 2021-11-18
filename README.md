@@ -40,7 +40,7 @@ Some things will be easier for you than others, depending on your familiarity wi
 2. Start local server: `npx ionic serve`
 3. Run Cypress tests: `npx cypress open`
 
-This will give you a running local server. Firebase credentials are provided for public access to the Spacebook Messenger Firestore database. `bin/seed.ts` is also provided, which allows you to initialize your own Firestore database if you prefer, or you'd like to explore it using the admin interface (simply replace the credentials in [src/config/firebaseConfig.ts](src/config/firebaseConfig.ts) with the credentials of your own project).
+This will give you a running local server.
 
 This repo contains the scaffold of a basic Ionic/React app and cypress tests for each challenge. Reach out to us if you think something is missing.
 
@@ -52,7 +52,11 @@ The ship's data core is available and accessible via **Firestore**. Your first t
 
 [Read more about loading data from Firestore](https://firebase.google.com/docs/firestore/query-data/get-data)
 
-Credentials for Firestore are available in [src/config/firebaseConfig.tsx](src/config/firebaseConfig.tsx).
+Credentials for Firestore are available in [src/config/firebaseConfig.tsx](src/config/firebaseConfig.tsx). These credentials are for public access to the Spacebook Messenger Firestore database.
+
+`bin/seed.ts` is also provided, which allows you to initialize your own Firestore database if you prefer, or you'd like to explore it using the admin interface (simply replace the credentials in [src/config/firebaseConfig.ts](src/config/firebaseConfig.ts) with the credentials of your own project).
+
+NOTE: do not try to load `firebase-admin` in the browser, it won't work.
 
 ### Data Structure
 
@@ -95,8 +99,6 @@ This task is designed to test your skills in managing changing state in a fronte
 The Firestore security rules applied to the Spacebook Messenger database (see [./firestore.rules](./firestore.rules)) will permit only crew members of the Galaxy One to write messages. The auth system is currently disabled (maybe we'll fix it in a future task 🤔), but the ship's AI, H.U.E., is still smart enough to prohibit creating messages that aren't from a known crew member.
 
 In order to create new messages, you must provide the name, ID and avatar of a known crew member, which you can find in `src/config/data.ts`. You can see an example of a new message being created in the Cypress test.
-
-NOTE: do not try to load `firebase-admin` in the browser, it won't work.
 
 ### Requirements
 
