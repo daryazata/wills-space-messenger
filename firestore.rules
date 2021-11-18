@@ -32,7 +32,8 @@ service cloud.firestore {
             );
           }
 
-          allow create: if messageDataIsValid(request.resource.data) &&
+          allow create: if channelId != "task1Channel" &&
+            messageDataIsValid(request.resource.data) &&
             exists(/databases/$(database)/documents/channels/$(channelId))
         }
       }
