@@ -54,7 +54,7 @@ The ship's data core is available and accessible via **Firestore**. Your first t
 
 Credentials for Firestore are available in [src/config/firebaseConfig.tsx](src/config/firebaseConfig.tsx). These credentials are for public access to the Spacebook Messenger Firestore database.
 
-`bin/seed.ts` is also provided, which allows you to initialize your own Firestore database if you prefer, or you'd like to explore it using the admin interface (simply replace the credentials in [src/config/firebaseConfig.ts](src/config/firebaseConfig.ts) with the credentials of your own project).
+You can look at `bin/seed.ts`, which was used to populate the database, in order to familiarize yourself with the data structure, which is also documented below.
 
 NOTE: do not try to load `firebase-admin` in the browser, it won't work.
 
