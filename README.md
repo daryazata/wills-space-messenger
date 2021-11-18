@@ -38,7 +38,7 @@ Some things will be easier for you than others, depending on your familiarity wi
 
 1. Install NPM packages
 2. Start local server: `npx ionic serve`
-3. Run Cypress tests: `cypress open`
+3. Run Cypress tests: `npx cypress open`
 
 This will give you a running local server. Firebase credentials are provided for public access to the Spacebook Messenger Firestore database. `bin/seed.ts` is also provided, which allows you to initialize your own Firestore database if you prefer, or you'd like to explore it using the admin interface (simply replace the credentials in [src/config/firebaseConfig.ts](src/config/firebaseConfig.ts) with the credentials of your own project).
 
