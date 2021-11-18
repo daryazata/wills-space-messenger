@@ -12,7 +12,7 @@ You may even be able to improve it, if you have the skills. Let's see, rookie.
 
 Complete the following challenges to proceed. This should take a few hours, depending on how much effort you want to invest in your solution, and how much detail you go into. Take as long as you need.
 
-Treat this as challenge as if you were writing a real messaging app, running on a real mobile device. We've designed it to be similar to what you'd be working on if you joined our team, so we want you to demonstrate that you understand the constraints and expectations of writing hybrid mobile apps.
+Treat this challenge as if you were writing a real messaging app, running on a real mobile device. We've designed it to be similar to what you'd be working on if you joined our team, so we want you to demonstrate that you understand the constraints and expectations of writing hybrid mobile apps.
 
 What would you add to your solution beyond the minimum requirements, and why? Even if you don't write it, you should be able to tell us what you think would be missing from a production-ready solution.
 
