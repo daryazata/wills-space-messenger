@@ -17,7 +17,6 @@ Treat this as challenge as if you were writing a real messaging app, running on 
 What would you add to your solution beyond the minimum requirements, and why? Even if you don't write it, you should be able to tell us what you think would be missing from a production-ready solution.
 
 <img src="https://static.wikia.nocookie.net/final-space/images/8/8a/Ventrexian_father_and_son_duo.jpg/revision/latest/scale-to-width-down/300?cb=20211114035828" align="right" style="margin-left: 1.0em" />
-<!-- <img src="https://static.wikia.nocookie.net/final-space/images/a/a3/Team_Squad_in_episode_9_%28Season_2%29.jpg/revision/latest/scale-to-width-down/500?cb=20210917194606" align="right" style="margin-left: 1.0em"> -->
 
 ## How your submission will be assessed
 
@@ -90,8 +89,6 @@ Extend your UI so that it will keep the list of messages up-to-date while the us
 This task is designed to test your skills in managing changing state in a frontend application. Show us you have considered typical situations that occur and provide sensible handling for them.
 
 [Read more about Firestore real-time updates](https://firebase.google.com/docs/firestore/query-data/listen)
-
-<!-- <img src="https://static.wikia.nocookie.net/final-space/images/d/d0/H.U.E._Screen_.PNG/revision/latest/scale-to-width-down/300?cb=20180227060106" align="right" style="margin-left: 1.0em" /> -->
 
 ### Creating messages
 
