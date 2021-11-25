@@ -34,6 +34,10 @@ Beyond that, your submission will be assessed in the following areas, where we w
 
 Some things will be easier for you than others, depending on your familiarity with them and your personal preferences. E.g. some people enjoy working in the UI so picking up Ionic will be easy, while others prefer low-level code, and Firestore will be easier.
 
+## Submitting your solution
+
+Please avoid opening a PR or otherwise publishing your solution. You can submit your solution by adding @wmadden as a collaborator.
+
 ## Getting started
 
 1. Install NPM packages
