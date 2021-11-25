@@ -60,7 +60,7 @@ NOTE: do not try to load `firebase-admin` in the browser, it won't work.
 
 ### Data Structure
 
-Data is stored in the following structure:
+Data is stored in the following structure - and these are the paths that you are able to query in the Firestore database:
 
 * `/channels/{channelId}` - messages are organized into "channels". Each channel has:
   * `name: string`
@@ -73,6 +73,11 @@ Data is stored in the following structure:
   * `text: string`
   * `sentAt: Timestamp` - (a Firestore Timestamp)
 
+Firestore security rules will not permit you to query any other paths (and no other data exists on any other path). They will also not permit you to create or update channels. You may create new messages, but you can't update existing messages. See the section below for more information on creating messages.
+
+If you get the error "FirebaseError: Missing or insufficient permissions.", it probably means you're trying to read a document which isn't at one of the above paths (and so is forbidden).
+
+Note that you don't need to specify the database name or anything when accessing Firestore. You only need to provide the document path, the database will be inferred from the credentials provided.
 ### Requirements
 
 NOTE: authentication is not necessary for this task.
