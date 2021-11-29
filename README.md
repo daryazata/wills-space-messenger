@@ -57,31 +57,32 @@ The ship's data core is available and accessible via **Firestore**. Your first t
 [Read more about loading data from Firestore](https://firebase.google.com/docs/firestore/query-data/get-data)
 
 Credentials for Firestore are available in [src/config/firebaseConfig.tsx](src/config/firebaseConfig.tsx). These credentials are for public access to the Spacebook Messenger Firestore database.
-
-You can look at `bin/seed.ts`, which was used to populate the database, in order to familiarize yourself with the data structure, which is also documented below.
-
-NOTE: do not try to load `firebase-admin` in the browser, it won't work.
-
 ### Data Structure
 
 Data is stored in the following structure - and these are the paths that you are able to query in the Firestore database:
 
-* `/channels/{channelId}` - messages are organized into "channels". Each channel has:
+* `/channels` - query this collection to get a list of all channels
+* `/channels/{channelId}` - this is an individual channel, which itself contains a collection of messages. A Channel has:
   * `name: string`
   * `image: string` - (a URL)
   * `members: { id: string; name: string; avatar: string }[]`
-* `/channels/{channelId}/messages` - each message has the following properties
+* `/channels/{channelId}/messages` - query this collection to get a list of messages for a channel. A Message has:
   * `senderId: string`
   * `senderAvatar: string`
   * `senderName: string`
   * `text: string`
   * `sentAt: Timestamp` - (a Firestore Timestamp)
 
-Firestore security rules will not permit you to query any other paths (and no other data exists on any other path). They will also not permit you to create or update channels. You may create new messages, but you can't update existing messages. See the section below for more information on creating messages.
+Attempting to query any other path will result in "FirebaseError: Missing or insufficient permissions". Attempting to modify the data or create new documents (except as specified in Task 2 under "Creating Messages") is not possible.
 
-If you get the error "FirebaseError: Missing or insufficient permissions.", it probably means you're trying to read a document which isn't at one of the above paths (and so is forbidden).
+### How the database was set up
 
-Note that you don't need to specify the database name or anything when accessing Firestore. You only need to provide the document path, the database will be inferred from the credentials provided.
+For full transparency, we have included the script used to generate the database contents: `bin/seed.ts`. You will not be able to execute it since you don't have permissions to modify the remote database, but you can see how the data was generated and exactly what structure it's in (which is also documented in this README).
+
+We have also included `firestore.rules`, which is the same configuration which is uploaded to the remote. These rules control what operations (read, write, delete) are permitted in the Firestore database. You can see there why it's not possible to e.g. create new channels.
+
+Note that you don't need to utilize `seed.ts` or `firestore.rules` in any way to complete this challenge, they're just there for transparency.
+
 ### Requirements
 
 NOTE: authentication is not necessary for this task.
