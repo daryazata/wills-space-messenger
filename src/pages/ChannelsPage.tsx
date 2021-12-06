@@ -7,7 +7,7 @@ import {
 } from "@ionic/react";
 import "./ChannelMessagesPage.css";
 
-const ChannelMessagesPage: React.FC = () => {
+const ChannelsPage: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
@@ -27,4 +27,4 @@ const ChannelMessagesPage: React.FC = () => {
   );
 };
 
-export default ChannelMessagesPage;
+export default ChannelsPage;
