@@ -1,23 +1,23 @@
 /* eslint-disable jest/valid-expect */
 /// <reference types="cypress" />
-import firebaseConfig from "../fixtures/firebaseConfig";
-import { initializeApp } from "firebase/app";
+import firebaseConfig from '../fixtures/firebaseConfig';
+import { initializeApp } from 'firebase/app';
 import {
   getFirestore,
   collection,
   addDoc,
   Timestamp,
-} from "firebase/firestore";
-import { users } from "../fixtures/data";
+} from 'firebase/firestore';
+import { users } from '../fixtures/data';
 
-const channelId = "commissary";
+const channelId = 'commissary';
 
-describe("Task 2: Real, **_raw_**, real-time updates ✨", () => {
+describe('Task 2: Real, **_raw_**, real-time updates ✨', () => {
   beforeEach(() => {
     cy.visit(`/channels/${channelId}/messages`);
   });
 
-  describe("when a new message is sent", () => {
+  describe('when a new message is sent', () => {
     const now = Date.now();
 
     beforeEach(() => {
@@ -26,17 +26,17 @@ describe("Task 2: Real, **_raw_**, real-time updates ✨", () => {
 
       cy.wrap(
         addDoc(collection(firestore, `/channels/${channelId}/messages`), {
-          senderId: "hue",
-          senderAvatar: users.hue.avatar,
-          senderName: users.hue.name,
+          senderId: 'mooncake',
+          senderAvatar: users.mooncake.avatar,
+          senderName: users.mooncake.name,
           text: `${now}`,
           sentAt: Timestamp.fromMillis(now),
         })
       );
     });
 
-    it("appears in the list of messages", () => {
-      cy.contains("[data-cy=message]", now).should("exist");
+    it('appears in the list of messages', () => {
+      cy.contains('[data-cy=message]', now).should('exist');
     });
   });
 });
